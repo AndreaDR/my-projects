@@ -8,21 +8,22 @@ root.title("CRrepot")
 frame= LabelFrame(root, text = "Reporte")
 frame.grid(row=1, column=0)
 
+#funcion de salvar doc
 def save_file():
 	open_file= filedialog.asksaveasfile(mode="w")
 	if open_file is None: 
 		return
-
-
+#funcion de abrir doc
 def open_file():
 	file= filedialog.askopenfile(mode="r")
 	if file is not None:
 		content = file.read()
 		print(content)
 
+# Boton de Salvar
 b1= Button(root, text= "Save", command= save_file)
 b1.grid(row=0, column=1)
-
+#Boton de abrir
 b2= Button(root, text= "Open", command= open_file)
 b2.grid(row=0, column=2)
 
@@ -57,7 +58,7 @@ def sub():
 	qty2.config(text= qty_reem)
 
 
-qty2= Label(frame, text= add)
+qty2= Label(frame, text= qty_reem)
 qty2.grid(row=2, column=2)
 
 
